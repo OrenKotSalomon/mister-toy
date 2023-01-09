@@ -1,0 +1,26 @@
+.toy-modal {
+    display: grid;
+    position: fixed;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    background: #ffffff;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    padding: 16px;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+}
+
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+}

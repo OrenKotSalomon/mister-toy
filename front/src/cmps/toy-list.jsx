@@ -5,6 +5,7 @@ import { ToyPreview } from "./toy-preview";
 
 export function ToyList({ toys, onDeleteToy }) {
 
+    if (!toys) return <h1>loading</h1>
     return (
 
         <section className="toy-list">

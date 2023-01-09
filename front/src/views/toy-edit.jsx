@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { toyService } from "../services/toy.service";
 import { saveToy } from "../store/toy.action";
@@ -19,6 +19,7 @@ export function ToyEdit() {
 
     function getToy() {
         toyService.getById(toyId).then(toy => {
+
             setNewToy(toy)
         })
     }
@@ -36,6 +37,7 @@ export function ToyEdit() {
 
     function onSaveToy() {
         saveToy(newToy).then(savedToy => {
+            console.log('toy saved', savedToy);
             // showSuccessMsg(`Todo added ${savedTodo._id}`)
             // addActivities(savedTodo, 'add')
         })
@@ -51,35 +53,38 @@ export function ToyEdit() {
     }
 
     return (
-        <section className="toy-modal">
-            <Link to='/toy'>exit</Link>
-            <form onSubmit={onSubmitToy} action="name">
-                <label htmlFor=""></label>
-                <input onChange={handleChange} type="text" name="name" id="name" placeholder="enter toy name"
-                    value={newToy.name}
-                />
-                <label htmlFor="price"></label>
-                <input onChange={handleChange} type="number" name="price"
-                    id="price" placeholder="enter toy price"
-                    value={newToy.price}
-                />
-                <select onChange={handleChange} name="label" id="label">
-                    <option value="">select label</option>
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="E">E</option>
-                    <option value="G">G</option>
-                    <option value="F">F</option>
-                </select>
-                <label htmlFor="description"></label>
-                <textarea onChange={handleChange} name="description" id="description"
-                    value={newToy.description}
-                ></textarea>
-                <button>sumbit toy</button>
-            </form>
+        <Fragment>
 
-        </section>
+            <section className="toy-modal">
+                <Link to='/toy'>exit</Link>
+                <form onSubmit={onSubmitToy} action="name">
+                    <label htmlFor=""></label>
+                    <input onChange={handleChange} type="text" name="name" id="name" placeholder="enter toy name"
+                        value={newToy.name}
+                    />
+                    <label htmlFor="price"></label>
+                    <input onChange={handleChange} type="number" name="price"
+                        id="price" placeholder="enter toy price"
+                        value={newToy.price}
+                    />
+                    <select onChange={handleChange} name="label" id="label">
+                        <option value="">select label</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                        <option value="G">G</option>
+                        <option value="F">F</option>
+                    </select>
+                    <label htmlFor="description"></label>
+                    <textarea onChange={handleChange} name="description" id="description"
+                        value={newToy.description}
+                    ></textarea>
+                    <button>sumbit toy</button>
+                </form>
+            </section>
+            <Link className="background" to='/toy'></Link>
+        </Fragment>
     )
 }

@@ -1,7 +1,7 @@
 import { store } from './store.js'
 
 import { toyService } from "../services/toy.service.js"
-import { ADD_TOY, REMOVE_TOY, SET_TOYS, UPDATE_TOY } from "./toy-reducer.js"
+import { ADD_TOY, REMOVE_TOY, SET_TOY, SET_TOYS, UPDATE_TOY } from "./toy-reducer.js"
 
 
 
@@ -13,7 +13,7 @@ export function loadToys() {
             store.dispatch({ type: SET_TOYS, toys: toys })
         })
         .catch(err => {
-            console.log('Had issues loading todos', err)
+            console.log('Had issues loading toys', err)
             throw err
         })
     // .finally(() => {
@@ -21,6 +21,16 @@ export function loadToys() {
     // })
 }
 
+// export function loadToy(toyId) {
+//     toyService.getById(toyId).then(toy => {
+//         store.dispatch({ type: SET_TOY, toy: toy })
+//     }).catch(err => {
+//         console.log('Had issues loading toy', err)
+//         throw err
+//     })
+
+
+// }
 
 
 export function removeToy(toyId) {

@@ -29,9 +29,9 @@ export function ToyFilter({ onSetFilter, filterBy }) {
         })
     }
 
-    function onClickSort(field) {
+    function onClickSort(field, num) {
         setFilter(prevFilter => {
-            return { ...prevFilter, sortType: field }
+            return { ...prevFilter, sortType: field, desc: prevFilter.desc * num }
         })
     }
 
@@ -42,9 +42,6 @@ export function ToyFilter({ onSetFilter, filterBy }) {
                 <label htmlFor="name"></label>
                 By name
                 <input onChange={handleChange} type="text" id="name" name="name" placeholder="Search Toy" />
-                <label htmlFor="inStock"></label>
-                In stock
-                <input onChange={handleChange} type="checkbox" name="inStock" id="inStock" />
                 <select onChange={handleChange} name="label" id="label">
                     <option value="">select label</option>
                     <option value="On wheels">On wheels</option>
@@ -56,11 +53,14 @@ export function ToyFilter({ onSetFilter, filterBy }) {
                     <option value="Outdoor">Outdoor</option>
                     <option value="Battery Powered">Battery Powered</option>
                 </select>
+                <label htmlFor="inStock"></label>
+                In stock
+                <input onChange={handleChange} type="checkbox" name="inStock" id="inStock" />
             </div>
             <div className="sort-container">
-                <div onClick={() => onClickSort('name')} >Name</div>
-                <div onClick={() => onClickSort('price')}>Price</div>
-                <div onClick={() => onClickSort('created')}>Created</div>
+                <div onClick={() => onClickSort('name', -1)} >Name</div>
+                <div onClick={() => onClickSort('price', -1)}>Price</div>
+                <div onClick={() => onClickSort('created', -1)}>Created</div>
 
             </div>
 

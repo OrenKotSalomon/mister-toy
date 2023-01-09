@@ -20,7 +20,7 @@ export function Toy() {
 
     useEffect(() => {
         loadToys()
-    }, [filterBy]);
+    }, [filterBy])
 
     function onDeleteToy(toy) {
         removeToy(toy._id)

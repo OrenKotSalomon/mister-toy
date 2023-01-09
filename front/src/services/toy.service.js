@@ -1,36 +1,12 @@
 
 import { storageService } from './async-storage.service.js'
+import { httpService } from './http.service.js'
 import { utilService } from './util.service.js'
 
 
 const STORAGE_KEY = 'toyDB'
+const BASE_URL = 'toy/'
 const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor', 'Battery', 'Powered']
-const toys = [
-    {
-        '_id': 't101',
-        'name': 'Talking Doll',
-        'price': 123,
-        'labels': ['Doll', 'Battery Powered', 'Baby'],
-        'createdAt': 1631031801011,
-        'inStock': true
-    }, {
-        '_id': 't102',
-        'name': 'Talking Doll',
-        'price': 123,
-        'labels': ['Doll', 'Battery Powered', 'Baby'],
-        'createdAt': 1631031801011,
-        'inStock': true
-    }, {
-        '_id': 't103',
-        'name': 'Talking Doll',
-        'price': 123,
-        'labels': ['Doll', 'Battery Powered', 'Baby'],
-        'createdAt': 1631031801011,
-        'inStock': true
-    },
-]
-
-// storageService._save(STORAGE_KEY, toys)
 
 
 // const PAGE_SIZE = 5
@@ -44,45 +20,30 @@ export const toyService = {
 }
 
 function query(filterBy = getDefaultFilter()) {
-    // return axios.get(BASE_URL).then(res => res.data)
+    const queryParams = `?name=${filterBy.name}
+&inStock=${filterBy.inStock}
+&label=${filterBy.label}
+&sortType=${filterBy.sortType}`
     console.log(filterBy);
+    return httpService.get(BASE_URL + queryParams)
 
-    return storageService.query(STORAGE_KEY).then(toys => {
-        let filteredToys = toys
-        if (filterBy.name) {
-            const regex = new RegExp(filterBy.name, 'i')
-            filteredToys = filteredToys.filter(toy => regex.test(toy.name))
-        }
-        if (filterBy.inStock) {
-            filteredToys = filteredToys.filter(toy => toy.inStock)
-            // console.log('filteredToys', filteredToys);
-        }
-        if (filterBy.label) {
-            filteredToys = filteredToys.filter(toy => toy.labels.includes(filterBy.label))
-        }
-        if (filterBy.sortType === 'name') filteredToys.sort((a, b) => a.name.localeCompare(b.name) * filterBy.desc)
-        if (filterBy.sortType === 'price') filteredToys.sort((a, b) => (b.price - a.price) * filterBy.desc)
-        if (filterBy.sortType === 'created') filteredToys.sort((a, b) => (b.price - a.price) * filterBy.desc)
-
-        return filteredToys
-    })
 }
 function getById(toyId) {
-    return storageService.get(STORAGE_KEY, toyId)
+    return httpService.get(BASE_URL + toyId)
 }
 function remove(toyId) {
 
-    return storageService.remove(STORAGE_KEY, toyId)
+    return httpService.delete(BASE_URL + toyId)
 }
 
 function save(toy) {
+    console.log('toy', toy);
 
     if (toy._id) {
-        return storageService.put(STORAGE_KEY, toy)
+        return httpService.put(BASE_URL, toy)
     } else {
         // when switching to backend - remove the next line
-        toy._id = utilService.makeId()
-        return storageService.post(STORAGE_KEY, toy)
+        return httpService.post(BASE_URL, toy)
     }
 }
 
@@ -104,7 +65,7 @@ function getEmptyToy() {
 
 }
 // TEST DATA
-// storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 6', price: 980}).then(x => console.log(x))
+// storageService.post(BASE_URL, {vendor: 'Subali Rahok 6', price: 980}).then(x => console.log(x))
 
 
 

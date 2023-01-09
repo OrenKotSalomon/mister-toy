@@ -3,7 +3,7 @@
 /* @import 'setup/typography.css'; */
 
 /* Base */
-/* @import 'base/base.css'; */
+@import 'base/base.css';
 /* @import 'base/helpers.css';
 
 @import 'base/forms.css';  */
@@ -17,11 +17,12 @@
 /* Components */
 @import 'cmps/toy-list.css';
 
-/* @import 'cmps/app-header.css';
-@import 'cmps/user-msg.css';
-@import 'cmps/bug-filter.css';
-@import 'cmps/bug-list.css';
-@import 'cmps/bug-preview.css';
+@import 'cmps/app-header.css';
+/* @import 'cmps/user-msg.css'; */
+@import 'cmps/toy-filter.css';
+@import 'cmps/toy-edit.css';
+/*@import 'cmps/bug-preview.css';
 @import 'cmps/bug-preview-filter.css';
 @import 'cmps/add-modal.css';
-@import 'cmps/bug-pagination.css'; */
+@import 'cmps/bug-pagination.css';
+*/
