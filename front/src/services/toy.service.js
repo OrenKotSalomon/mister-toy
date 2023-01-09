@@ -43,7 +43,7 @@ export const toyService = {
     getDefaultFilter
 }
 
-function query() {
+function query(filterBy = getDefaultFilter()) {
     // return axios.get(BASE_URL).then(res => res.data)
     return storageService.query(STORAGE_KEY).then(toys => {
         return toys
@@ -70,7 +70,7 @@ function save(toy) {
 
 
 function getDefaultFilter() {
-    return { txt: '', criteria: '', pageIdx: 0 }
+    return { name: '', inStock: false, label: 0 }
 }
 
 

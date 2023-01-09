@@ -3,14 +3,15 @@ import { toyService } from "../services/toy.service.js"
 export const SET_TOYS = 'SET_TOYS'
 export const ADD_TOY = 'ADD_TOY'
 export const REMOVE_TOY = 'REMOVE_TOY'
-export const UPDATE_TODO = 'UPDATE_TODO'
+export const UPDATE_TOY = 'UPDATE_TOY'
 export const SET_IS_LOADING = 'SET_IS_LOADING'
 export const SET_FILTER = 'SET_FILTER'
-export const INCREMENT_PAGE = 'INCREMENT_PAGE'
-export const DECREMENT_PAGE = 'DECREMENT_PAGE'
+// export const INCREMENT_PAGE = 'INCREMENT_PAGE'
+// export const DECREMENT_PAGE = 'DECREMENT_PAGE'
 
 const initialState = {
-    toys: []
+    toys: [],
+    filterBy: toyService.getDefaultFilter()
 }
 
 
@@ -18,6 +19,7 @@ const initialState = {
 
 export function toyReducer(state = initialState, action) {
     let toys
+    let filterBy
     switch (action.type) {
 
 
@@ -33,14 +35,16 @@ export function toyReducer(state = initialState, action) {
         case REMOVE_TOY:
             toys = state.toys.filter(toy => toy._id !== action.toyId)
             return { ...state, toys }
-        // case UPDATE_TODO:
-        //     todos = state.todos.map(todo => todo._id === action.todo._id ? action.todo : todo)
-        //     return { ...state, todos }
+        case UPDATE_TOY:
+            toys = state.toys.map(toy => toy._id === action.toy._id ? action.toy : toy)
+            return { ...state, toys }
 
-        // // filter
-        // case SET_FILTER:
-        //     filterBy = { ...state.filterBy, txt: action.filter.txt, criteria: action.filter.criteria }
-        //     return { ...state, filterBy }
+        // filter
+        case SET_FILTER:
+            // filterBy = { ...state.filterBy, txt: action.filter.txt, criteria: action.filter.criteria }
+            return { ...state, filterBy }
+
+
         // case INCREMENT_PAGE:
         //     filterBy = { ...state.filterBy, pageIdx: action.pageIdx }
         //     console.log('filterBy', filterBy);
