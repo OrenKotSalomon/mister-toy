@@ -1,7 +1,7 @@
 import { store } from './store.js'
 
 import { toyService } from "../services/toy.service.js"
-import { SET_TOYS } from "./toy-reducer.js"
+import { ADD_TOY, SET_TOYS } from "./toy-reducer.js"
 
 
 
@@ -35,17 +35,17 @@ export function loadToys() {
 // }
 
 
-// export function saveTodo(todo) {
-//     const type = (todo._id) ? UPDATE_TODO : ADD_TODO
-//     return todoService.save(todo)
-//         .then(savedTodo => {
-//             store.dispatch({ type, todo: savedTodo })
-//             return savedTodo
-//         })
-//         .catch(err => {
-//             console.log('cannot add todo', err)
-//             throw err
+export function saveToy(toy) {
+    // const type = (toy._id) ? UPDATE_TODO : ADD_TOY
+    return toyService.save(toy)
+        .then(savedToy => {
+            store.dispatch({ type: ADD_TOY, toy: savedToy })
+            return savedToy
+        })
+        .catch(err => {
+            console.log('cannot add todo', err)
+            throw err
 
-//         })
+        })
 
-// }
+}

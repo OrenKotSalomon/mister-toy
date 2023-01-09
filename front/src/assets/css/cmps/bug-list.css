@@ -1,0 +1,34 @@
+.bug-list {
+    /* width: 50%; */
+    list-style: none;
+    gap: 15px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.bug-preview-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 10px;
+}
+
+.bug-preview-btns button {
+    border-radius: 10px;
+    max-width: 30px;
+    background-color: #393939;
+    color: aliceblue;
+    transition: 0.5s;
+}
+
+.bug-preview-btns button:hover {
+
+    color: rgb(184, 186, 187);
+
+}
+
+.detail-link {
+    text-align: center;
+    text-decoration: none;
+    color: aliceblue;
+}

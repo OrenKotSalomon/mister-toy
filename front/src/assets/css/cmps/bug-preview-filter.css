@@ -1,0 +1,18 @@
+.bug-preview-filter {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+}
+
+.details-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+
+}
+
+
+.btn-info-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+}

@@ -22,6 +22,8 @@ export function ToyList({ toys }) {
                             {toy.labels.map(label => <div key={'gello' + `${num++}`}>{label}</div>)}
 
                         </div>
+                        <button>delete</button>
+                        <button>edit</button>
                     </div>
 
                     )

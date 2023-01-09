@@ -76,13 +76,15 @@ function getDefaultFilter() {
 
 function getEmptyToy() {
     return {
-        txt: '',
-        at: Date.now(),
-        isDone: false
-        // price: utilService.getRandomIntInclusive(1000, 9000),
-    }
-}
 
+        name: "",
+        price: '',
+        labels: [],
+        createdAt: Date.now(),
+        inStock: true
+    }
+
+}
 // TEST DATA
 // storageService.post(STORAGE_KEY, {vendor: 'Subali Rahok 6', price: 980}).then(x => console.log(x))
 

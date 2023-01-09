@@ -1,0 +1,16 @@
+.app-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+}
+
+.nav-app {
+    display: flex;
+    justify-content: center;
+
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+/* .logo {} */

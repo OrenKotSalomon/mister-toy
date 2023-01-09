@@ -1,0 +1,38 @@
+.bug-index {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #393939;
+    border-radius: 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn-add-bug {
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.btn-add-bug button {
+    border-radius: 20px;
+    padding: 0.5rem;
+    background-color: #393939;
+    color: aliceblue;
+    transition: 0.5s;
+}
+
+.btn-add-bug button:hover {
+    color: rgb(175, 178, 180);
+}
+
+.bug-index .fa-plus {
+    font-size: 30px;
+}
+
+.bug-index .fa-bug {
+    display: flex;
+    gap: 10px;
+    font-size: 30px;
+}

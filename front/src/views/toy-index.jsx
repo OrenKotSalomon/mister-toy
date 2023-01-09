@@ -1,7 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { ToyList } from "../cmps/toy-list.jsx";
-import { loadToys } from "../store/toy.action.js";
+import { ToyModal } from "../cmps/toy-modal.jsx";
+import { toyService } from "../services/toy.service.js";
+import { loadToys, saveToy } from "../store/toy.action.js";
 
 
 export function Toy() {
@@ -12,7 +14,8 @@ export function Toy() {
 
     // const dispatch = useDispatch()
     // const input = useRef()
-    // const [todo, setTodo] = useState(todoService.getEmptyTodo())
+    const [isModalShown, setIsModalShown] = useState(false)
+    const [DefaultToy, setDefaultToy] = useState(toyService.getEmptyToy())
     // let pageIdx = filterBy.pageIdx
 
 
@@ -22,21 +25,20 @@ export function Toy() {
 
     console.log(toys);
 
-    // function onAddTodo(ev) {
-    //     ev.preventDefault()
-    //     ev.stopPropagation()
-    //     saveTodo(todo).then(savedTodo => {
-    //         showSuccessMsg(`Todo added ${savedTodo._id}`)
-    //         input.current.value = ''
-    //         setTodo(todoService.getEmptyTodo())
-    //         addActivities(savedTodo, 'add')
+    function onAddToy(toy) {
 
-    //     })
-    //         .catch(err => {
-    //             showErrorMsg('cannot add todo')
-    //         })
 
-    // }
+        setIsModalShown(!isModalShown)
+        saveToy(toy).then(savedToy => {
+            // showSuccessMsg(`Todo added ${savedTodo._id}`)
+            // addActivities(savedTodo, 'add')
+
+        })
+            .catch(err => {
+                // showErrorMsg('cannot add todo')
+            })
+
+    }
 
     // function onSetIsDone(ev, todo) {
     //     ev.stopPropagation()
@@ -72,8 +74,9 @@ export function Toy() {
 
         hello from Toy
         <main className="toy-index">
+            <button onClick={onAddToy}>add toy</button>
             {/* {isLoading && <p>loading eztrobal</p>} */}
-
+            {isModalShown && <ToyModal DefaultToy={DefaultToy} onAddToy={onAddToy} setIsModalShown={setIsModalShown} />}
             <ToyList toys={toys} />
             {/* <TodoFilter onSetFilter={onSetFilter} /> */}
         </main>

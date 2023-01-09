@@ -1,0 +1,215 @@
+@font-face {
+    font-family: fira-regular;
+    src: url(../../../assets/fonts/FiraSansExtraCondensed-Regular.ttf);
+}
+
+@font-face {
+    font-family: fira-medium;
+    src: url(../../../assets/fonts/FiraSansExtraCondensed-Medium.ttf);
+}
+
+@font-face {
+    font-family: roboto;
+    src: url(../../../assets/fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+    font-family: fa-brands;
+    src: url(/assets/font-awesome/fa-brands-400.ttf);
+}
+
+@font-face {
+    font-family: fa-regular;
+    src: url(/assets/font-awesome/fa-regular-400.ttf);
+}
+
+@font-face {
+    font-family: fa-solid;
+    src: url(/assets/font-awesome/fa-solid-900.ttf);
+}
+
+
+.fa-solid {
+    font-family: fa-solid;
+}
+
+.fa-regular {
+    font-family: fa-regular;
+}
+
+.fa-brands {
+    font-family: fa-brands;
+}
+
+.fa-home::before {
+    content: "\f015";
+}
+
+.fa-mail::before {
+    content: "\f0e0";
+}
+
+.fa-about::before {
+    content: "\f091";
+}
+
+.fa-notes::before {
+    content: "\f0eb";
+}
+
+.fa-pin::before {
+    content: "\f08d";
+}
+
+.fa-color::before {
+    content: "\f53f";
+}
+
+.fa-edit::before {
+    content: "\f044";
+}
+
+.fa-delete::before {
+    content: "\f2ed";
+}
+
+.fa-star::before {
+    content: '\f005';
+}
+
+.fa-bookmark:before {
+
+    content: '\f02e';
+}
+
+.fa-arrow-right-long:before {
+    content: '\f177';
+}
+
+.fa-envelope:before {
+    content: '\f0e0';
+}
+
+.fa-envelope-open:before {
+    content: '\f2b6';
+}
+
+.fa-expand:before {
+    content: '\f065';
+}
+
+.fa-img:before {
+    content: '\f03e';
+}
+
+.fa-video:before {
+    content: '\f03d';
+}
+
+.fa-list:before {
+    content: '\f0ca';
+}
+
+.fa-note:before {
+    content: '\f249';
+}
+
+.fa-magnifying-glass {
+    font-size: 1.5rem;
+}
+
+.fa-magnifying-glass:before {
+    content: '\f002';
+}
+
+.fa-pencil {
+    font-size: 1.5rem;
+
+}
+
+.fa-pencil:before {
+
+    content: '\f002';
+}
+
+.fa-plus:before {
+
+    content: '\2b';
+}
+
+.fa-inbox {
+    font-size: 1.2rem;
+}
+
+.fa-inbox:before {
+
+    content: '\f01c';
+}
+
+.fa-x:before {
+
+    content: '\58';
+}
+
+.fa-readme:before {
+
+    content: '\f4d5';
+}
+
+.fa-envelope-circle-check:before {
+
+    content: '\e4e8';
+}
+
+.fa-paper-plane:before {
+
+    content: '\f1d8';
+}
+
+.fa-calendar-days:before {
+
+    content: '\f073';
+}
+
+.fa-recycle:before {
+
+    content: '\f1b8';
+}
+
+.fa-trash-arrow-up:before {
+
+    content: '\f829';
+}
+
+.fa-file-lines:before {
+
+    content: '\f15c';
+}
+
+.fa-bars {
+    content: '\f0c9';
+}
+
+.fa-linkedin {
+    content: '\f08c';
+}
+
+.fa-square-github {
+    content: '\f092';
+}
+
+.fa-bug:before {
+    content: '\f188';
+}
+
+.fa-bug-slash:before {
+    content: '\e490';
+}
+
+.fa-angle-right:before {
+    content: '\f105';
+}
+
+.fa-angle-left:before {
+    content: '\f104';
+}

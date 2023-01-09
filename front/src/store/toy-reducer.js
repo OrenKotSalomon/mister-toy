@@ -1,7 +1,7 @@
 import { toyService } from "../services/toy.service.js"
 
 export const SET_TOYS = 'SET_TOYS'
-export const ADD_TODO = 'ADD_TODO'
+export const ADD_TOY = 'ADD_TOY'
 export const REMOVE_TODO = 'REMOVE_TODO'
 export const UPDATE_TODO = 'UPDATE_TODO'
 export const SET_IS_LOADING = 'SET_IS_LOADING'
@@ -27,9 +27,9 @@ export function toyReducer(state = initialState, action) {
         //     return { ...state, isLoading: action.isLoading }
 
 
-        // case ADD_TODO:
-        //     todos = [...state.todos, action.todo]
-        //     return { ...state, todos }
+        case ADD_TOY:
+            toys = [...state.toys, action.toy]
+            return { ...state, toys }
         // case REMOVE_TODO:
         //     todos = state.todos.filter(todo => todo._id !== action.todoId)
         //     return { ...state, todos }

@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './assets/css/main.css'
 
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from 'react-redux';

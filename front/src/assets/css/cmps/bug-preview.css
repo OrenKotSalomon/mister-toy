@@ -1,0 +1,22 @@
+.bug-preview {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    align-items: center;
+    border-bottom: 1px solid;
+    padding: 10px;
+    justify-content: space-around;
+}
+
+.bug-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    text-align: center;
+}
+
+.title-container {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
