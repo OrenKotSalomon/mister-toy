@@ -1,7 +1,7 @@
 
 
 
-export function ToyList({ toys }) {
+export function ToyList({ toys, onDeleteToy }) {
 
 
     let num = 0
@@ -22,7 +22,7 @@ export function ToyList({ toys }) {
                             {toy.labels.map(label => <div key={'gello' + `${num++}`}>{label}</div>)}
 
                         </div>
-                        <button>delete</button>
+                        <button onClick={() => onDeleteToy(toy)}>delete</button>
                         <button>edit</button>
                     </div>
 

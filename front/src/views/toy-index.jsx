@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { ToyList } from "../cmps/toy-list.jsx";
 import { ToyModal } from "../cmps/toy-modal.jsx";
 import { toyService } from "../services/toy.service.js";
-import { loadToys, saveToy } from "../store/toy.action.js";
+import { loadToys, removeToy, saveToy } from "../store/toy.action.js";
 
 
 export function Toy() {
@@ -23,16 +23,11 @@ export function Toy() {
         loadToys()
     }, []);
 
-    console.log(toys);
-
     function onAddToy(toy) {
-
-
         setIsModalShown(!isModalShown)
         saveToy(toy).then(savedToy => {
             // showSuccessMsg(`Todo added ${savedTodo._id}`)
             // addActivities(savedTodo, 'add')
-
         })
             .catch(err => {
                 // showErrorMsg('cannot add todo')
@@ -55,21 +50,18 @@ export function Toy() {
     //         })
     // }
 
-    // function onDeleteTodo(todo) {
-    //     removeTodo(todo._id)
-    //         .then(() => {
-    //             showSuccessMsg('TODO removed')
-    //             addActivities(todo, 'removed')
-    //         })
-    //         .catch(err => {
-    //             showErrorMsg('cannot remove todo', err)
-    //         })
-    // }
+    function onDeleteToy(toy) {
+        console.log(toy);
+        removeToy(toy._id)
+            .then(() => {
+                // showSuccessMsg('TODO removed')
 
-    // function onSetFilter(filter) {
-    //     dispatch({ type: SET_FILTER, filter })
-    // }
-    // if (isLoading) return <h1>loading eztrobal</h1>
+            })
+            .catch(err => {
+                // showErrorMsg('cannot remove todo', err)
+            })
+    }
+
     return <section>
 
         hello from Toy
@@ -77,7 +69,7 @@ export function Toy() {
             <button onClick={onAddToy}>add toy</button>
             {/* {isLoading && <p>loading eztrobal</p>} */}
             {isModalShown && <ToyModal DefaultToy={DefaultToy} onAddToy={onAddToy} setIsModalShown={setIsModalShown} />}
-            <ToyList toys={toys} />
+            <ToyList toys={toys} onDeleteToy={onDeleteToy} />
             {/* <TodoFilter onSetFilter={onSetFilter} /> */}
         </main>
         {/* <div className="pagination-container">

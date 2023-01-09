@@ -1,7 +1,7 @@
 import { store } from './store.js'
 
 import { toyService } from "../services/toy.service.js"
-import { ADD_TOY, SET_TOYS } from "./toy-reducer.js"
+import { ADD_TOY, REMOVE_TOY, SET_TOYS } from "./toy-reducer.js"
 
 
 
@@ -23,16 +23,16 @@ export function loadToys() {
 
 
 
-// export function removeTodo(todoId) {
-//     return todoService.remove(todoId)
-//         .then(() => {
-//             store.dispatch({ type: REMOVE_TODO, todoId })
-//         })
-//         .catch(err => {
-//             console.log('cannot remove TODO ', err)
-//             throw err
-//         })
-// }
+export function removeToy(toyId) {
+    return toyService.remove(toyId)
+        .then(() => {
+            store.dispatch({ type: REMOVE_TOY, toyId })
+        })
+        .catch(err => {
+            console.log('cannot remove TODO ', err)
+            throw err
+        })
+}
 
 
 export function saveToy(toy) {
