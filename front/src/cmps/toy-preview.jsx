@@ -21,6 +21,8 @@ export function ToyPreview({ toy, onDeleteToy }) {
             </div>
             <button onClick={() => onDeleteToy(toy)}>delete</button>
             <Link to={`/toy/edit/${toy._id}`}>edit</Link>
+            <Link to={`/toy/details/${toy._id}`}>details</Link>
+
         </div>
     )
 }

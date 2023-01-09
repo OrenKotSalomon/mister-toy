@@ -6,10 +6,9 @@ import { ADD_TOY, REMOVE_TOY, SET_TOYS, UPDATE_TOY } from "./toy-reducer.js"
 
 
 export function loadToys() {
-    let filterBy = store.getState().toyModule.filterBy
-
+    let filter = store.getState().toyModule.filterBy
     // store.dispatch({ type: SET_IS_LOADING, isLoading: true })
-    return toyService.query(filterBy)
+    return toyService.query(filter)
         .then((toys) => {
             store.dispatch({ type: SET_TOYS, toys: toys })
         })

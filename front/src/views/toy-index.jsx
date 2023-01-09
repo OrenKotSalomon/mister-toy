@@ -15,28 +15,14 @@ export function Toy() {
     // const isLoading = useSelector((storeState) => storeState.todoModule.isLoading)
 
     const dispatch = useDispatch()
-    // const input = useRef()
-    // let pageIdx = filterBy.pageIdx
+
 
 
     useEffect(() => {
         loadToys()
-    }, []);
-
-    function onAddToy(toy) {
-
-        saveToy(toy).then(savedToy => {
-            // showSuccessMsg(`Todo added ${savedTodo._id}`)
-            // addActivities(savedTodo, 'add')
-        })
-            .catch(err => {
-                // showErrorMsg('cannot add todo')
-            })
-
-    }
+    }, [filterBy]);
 
     function onDeleteToy(toy) {
-        console.log(toy);
         removeToy(toy._id)
             .then(() => {
                 // showSuccessMsg('TODO removed')
@@ -47,10 +33,10 @@ export function Toy() {
             })
     }
 
-    function onSetFilter(filterBy) {
-        dispatch({ type: SET_FILTER, filterBy })
-    }
+    function onSetFilter(updatedFilter) {
+        dispatch({ type: SET_FILTER, updatedFilter })
 
+    }
 
     return <section>
 

@@ -41,8 +41,8 @@ export function toyReducer(state = initialState, action) {
 
         // filter
         case SET_FILTER:
-            // filterBy = { ...state.filterBy, txt: action.filter.txt, criteria: action.filter.criteria }
-            return { ...state, filterBy }
+            filterBy = { ...state, updatedFilter: action.updatedFilter }
+            return { ...state, filterBy: filterBy.updatedFilter }
 
 
         // case INCREMENT_PAGE:
