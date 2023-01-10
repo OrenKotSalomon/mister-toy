@@ -44,6 +44,16 @@
     background: none;
 }
 
+.toy-img-container {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+}
+
+.toy-img-container img {
+    width: 50%;
+}
+
 .red {
     color: red;
 }

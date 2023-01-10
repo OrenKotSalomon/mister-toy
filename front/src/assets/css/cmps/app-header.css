@@ -8,6 +8,11 @@
 
 .logo {
     text-decoration: none;
+    width: fit-content;
+}
+
+.logo img {
+    width: 30%;
 
 }
 
