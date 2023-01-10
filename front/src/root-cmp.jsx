@@ -12,6 +12,7 @@ import { AppHeader } from './cmps/app-header';
 import { Toy } from './views/toy-index';
 import { ToyEdit } from './views/toy-edit';
 import { ToyDetails } from './views/toy-detail';
+import { Dashboard } from './views/Dashboard';
 function App() {
 
   return (
@@ -28,10 +29,11 @@ function App() {
                 <Route element={<ToyEdit />} path='/toy/edit/:toyId' />
               </Route>
               <Route element={<ToyDetails />} path="/toy/details/:toyId" />
-              <Route>
+
+              <Route element={<Dashboard />} path="/dashboard" />
 
 
-              </Route>
+
             </Routes>
           </main>
           {/* <AppFooter /> */}

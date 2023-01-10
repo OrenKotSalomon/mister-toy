@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useState } from "react";
 
+import Select from 'react-select';
 
 
 import { toyService } from "../services/toy.service.js";
@@ -10,7 +11,7 @@ import { utilService } from "../services/util.service.js";
 
 
 
-export function ToyFilter({ onSetFilter, filterBy }) {
+export function ToyFilter({ onSetFilter, filterBy, labels }) {
     const [filter, setFilter] = useState(filterBy)
 
 
@@ -35,6 +36,12 @@ export function ToyFilter({ onSetFilter, filterBy }) {
         })
     }
 
+    function temp(ev) {
+        let labels = ev.map(label => label.label)
+        setFilter(prevFilter => ({ ...prevFilter, label: labels }))
+    }
+
+
     return (
         <section className="todo-filter">
             <div className="filter-container">
@@ -42,17 +49,15 @@ export function ToyFilter({ onSetFilter, filterBy }) {
                 <label htmlFor="name"></label>
                 By name
                 <input onChange={handleChange} type="text" id="name" name="name" placeholder="Search Toy" />
-                <select onChange={handleChange} name="label" id="label">
-                    <option value="">select label</option>
-                    <option value="On wheels">On wheels</option>
-                    <option value="Box game">Box game</option>
-                    <option value="Art">Art</option>
-                    <option value="Baby">Baby</option>
-                    <option value="Doll">Doll</option>
-                    <option value="Puzzle">Puzzle</option>
-                    <option value="Outdoor">Outdoor</option>
-                    <option value="Battery Powered">Battery Powered</option>
-                </select>
+                <Select
+
+                    onChange={temp}
+                    isMulti={true}
+                    name="label"
+                    options={labels.current}
+                    className="basic-multi-select"
+                    classNamePrefix="select"
+                />
                 <label htmlFor="inStock"></label>
                 In stock
                 <input onChange={handleChange} type="checkbox" name="inStock" id="inStock" />

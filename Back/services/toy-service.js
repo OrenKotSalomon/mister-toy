@@ -23,7 +23,7 @@ function query(filterBy) {
         // console.log('filteredToys', filteredToys);
     }
     if (filterBy.label) {
-        filteredToys = filteredToys.filter(toy => toy.labels.includes(filterBy.label))
+        filteredToys = filteredToys.filter(toy => filterBy.label.split(',').every(label => toy.labels.includes(label)))
     }
     if (filterBy.sortType === 'name') filteredToys.sort((a, b) => a.name.localeCompare(b.name) * filterBy.desc)
     if (filterBy.sortType === 'price') filteredToys.sort((a, b) => (b.price - a.price) * filterBy.desc)

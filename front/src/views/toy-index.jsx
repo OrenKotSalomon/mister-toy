@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import { ToyFilter } from "../cmps/toy-filter.jsx";
@@ -13,7 +13,7 @@ export function Toy() {
     const toys = useSelector((storeState) => storeState.toyModule.toys)
     const filterBy = useSelector((storeState) => storeState.toyModule.filterBy)
     // const isLoading = useSelector((storeState) => storeState.todoModule.isLoading)
-
+    const labels = useRef(toyService.getDefaultLabels())
     const dispatch = useDispatch()
 
 
@@ -43,7 +43,7 @@ export function Toy() {
         hello from Toy
         <main className="toy-index">
             <div className="filter-container">
-                <ToyFilter onSetFilter={onSetFilter} filterBy={filterBy} />
+                <ToyFilter onSetFilter={onSetFilter} filterBy={filterBy} labels={labels} />
             </div>
 
             <Link to='/toy/edit'>Add toy</Link>

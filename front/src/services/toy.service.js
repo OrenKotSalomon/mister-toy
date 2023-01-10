@@ -6,7 +6,7 @@ import { utilService } from './util.service.js'
 
 const STORAGE_KEY = 'toyDB'
 const BASE_URL = 'toy/'
-const labels = ['On wheels', 'Box game', 'Art', 'Baby', 'Doll', 'Puzzle', 'Outdoor', 'Battery', 'Powered']
+
 
 
 // const PAGE_SIZE = 5
@@ -16,7 +16,8 @@ export const toyService = {
     save,
     remove,
     getEmptyToy,
-    getDefaultFilter
+    getDefaultLabels,
+    getDefaultFilter,
 }
 
 function query(filterBy = getDefaultFilter()) {
@@ -48,6 +49,7 @@ function save(toy) {
 }
 
 
+
 function getDefaultFilter() {
     return { name: '', inStock: false, label: '', sortType: '', desc: -1 }
 }
@@ -60,10 +62,33 @@ function getEmptyToy() {
         price: '',
         labels: [],
         createdAt: Date.now(),
-        inStock: true
+        inStock: true,
+        msgs: [
+            "Can i help you ?",
+            "please contact support",
+            "rate this toy"
+        ],
     }
 
 }
+
+
+function getDefaultLabels() {
+    return [
+
+        { value: 'On wheels', label: 'On wheels' },
+        { value: 'Box game', label: 'Box game' },
+        { value: 'Art', label: 'Art' },
+        { value: 'Baby', label: 'Baby' },
+        { value: 'Doll', label: 'Doll' },
+        { value: 'Puzzle', label: 'Puzzle' },
+        { value: 'Outdoor', label: 'Outdoor' },
+        { value: 'Battery Powered', label: 'Battery Powered' },
+    ]
+
+
+}
+
 // TEST DATA
 // storageService.post(BASE_URL, {vendor: 'Subali Rahok 6', price: 980}).then(x => console.log(x))
 
