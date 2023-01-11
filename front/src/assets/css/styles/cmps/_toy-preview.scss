@@ -1,0 +1,77 @@
+.toy-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 5px;
+
+    .preview-link-container {
+        display: flex;
+        justify-content: space-around;
+
+        >* {
+            text-decoration: none;
+            transition: 0.5s;
+
+            &:hover {
+                color: rgb(162, 164, 165);
+            }
+        }
+
+        button {
+            background: none;
+        }
+    }
+
+    .label-container {
+        font-size: 0.8rem;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .in-stock {
+        text-align: start;
+        font-size: 0.9rem;
+    }
+
+    .price {
+        font-size: 1.1rem;
+    }
+
+}
+
+
+.toy-preview {
+    background-color: aliceblue;
+    border-radius: 20px;
+    text-align: center;
+
+    .toy-img-container {
+        width: fit-content;
+        display: flex;
+        justify-content: center;
+        background-color: #ffffff;
+        margin: 10px;
+        border-radius: 20px;
+
+        img {
+            width: 50%;
+            // border: 2px solid white;
+            margin-top: 5px;
+        }
+    }
+
+    .toy-name {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin: 0;
+        font-size: 2rem;
+    }
+}
+
+.green {
+    color: rgb(52, 153, 52);
+    font-size: 1.5rem;
+}

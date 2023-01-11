@@ -1,0 +1,42 @@
+.app-header {
+    display: grid;
+    grid-template-columns: minmax(auto, 30%) 1fr;
+    align-items: center;
+    box-shadow: 0px 2px 5px black;
+    font-family: passion;
+
+    .logo {
+        text-decoration: none;
+        width: fit-content;
+        justify-self: center;
+
+        img {
+            width: 40%;
+            mix-blend-mode: multiply;
+        }
+    }
+
+    .link-container {
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.2rem;
+
+
+        >* {
+            color: black;
+            text-decoration: none;
+
+        }
+
+        .active {
+            color: rgb(23, 218, 97);
+            border-bottom: 1px solid rgb(23, 218, 97);
+        }
+    }
+}
+
+
+
+/* .logo {} */
+
+// .header-content-container {}

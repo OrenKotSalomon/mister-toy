@@ -18,7 +18,5 @@ export function ToyList({ toys, onDeleteToy }) {
             </div>
         </section>
 
-
-
     )
 }

@@ -1,5 +1,5 @@
 
-import './assets/css/main.css'
+import './assets/css/styles/style.scss'
 
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { Provider } from 'react-redux';
@@ -20,22 +20,22 @@ function App() {
       <Router>
         <section className="main-layout app">
           <AppHeader />
-          <main>
-            <Routes>
-              <Route element={<Home />} path="/" />
-              <Route element={<About />} path="/about" />
-              <Route element={<Toy />} path="/toy" >
-                <Route element={<ToyEdit />} path='/toy/edit' />
-                <Route element={<ToyEdit />} path='/toy/edit/:toyId' />
-              </Route>
-              <Route element={<ToyDetails />} path="/toy/details/:toyId" />
 
-              <Route element={<Dashboard />} path="/dashboard" />
+          <Routes>
+            <Route element={<Home />} path="/" />
+            <Route element={<About />} path="/about" />
+            <Route element={<Toy />} path="/toy" >
+              <Route element={<ToyEdit />} path='/toy/edit' />
+              <Route element={<ToyEdit />} path='/toy/edit/:toyId' />
+            </Route>
+            <Route element={<ToyDetails />} path="/toy/details/:toyId" />
+
+            <Route element={<Dashboard />} path="/dashboard" />
 
 
 
-            </Routes>
-          </main>
+          </Routes>
+
           {/* <AppFooter /> */}
         </section>
       </Router>

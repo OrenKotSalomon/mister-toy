@@ -1,0 +1,18 @@
+.add {
+    text-align: center;
+    padding: 20px;
+
+    >* {
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+}
+
+.toy-index {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    margin-top: 10px;
+}

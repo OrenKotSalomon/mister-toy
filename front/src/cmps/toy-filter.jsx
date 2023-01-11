@@ -43,12 +43,12 @@ export function ToyFilter({ onSetFilter, filterBy, labels }) {
 
 
     return (
-        <section className="todo-filter">
+        <section className="toy-filter">
             <div className="filter-container">
 
-                <label htmlFor="name"></label>
+                <label className="text-label" htmlFor="name"></label>
                 By name
-                <input onChange={handleChange} type="text" id="name" name="name" placeholder="Search Toy" />
+                <input className="text-filter" onChange={handleChange} type="text" id="name" name="name" placeholder="Search Toy" />
                 <Select
 
                     onChange={temp}
@@ -58,9 +58,10 @@ export function ToyFilter({ onSetFilter, filterBy, labels }) {
                     className="basic-multi-select"
                     classNamePrefix="select"
                 />
-                <label htmlFor="inStock"></label>
-                In stock
-                <input onChange={handleChange} type="checkbox" name="inStock" id="inStock" />
+                <label htmlFor="inStock"> In stock
+
+                    <input onChange={handleChange} type="checkbox" name="inStock" id="inStock" />
+                </label>
             </div>
             <div className="sort-container">
                 <div onClick={() => onClickSort('name', -1)} >Name</div>

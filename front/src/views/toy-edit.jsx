@@ -76,26 +76,6 @@ export function ToyEdit() {
     return (
         <Fragment>
 
-            {/* <section className="toy-modal">
-                <Link to='/toy'>exit</Link>
-                <form onSubmit={onSubmitToy} action="name">
-                    <label htmlFor=""></label>
-                    <input onChange={handleChange} type="text" name="name" id="name" placeholder="enter toy name"
-                        value={newToy.name}
-                    />
-                    <label htmlFor="price"></label>
-                    <input onChange={handleChange} type="number" name="price"
-                        id="price" placeholder="enter toy price"
-                        value={newToy.price}
-                    />
-                 
-                    <label htmlFor="description"></label>
-                    <textarea onChange={handleChange} name="description" id="description"
-                        value={newToy.description}
-                    ></textarea>
-                    <button>sumbit toy</button>
-                </form>
-            </section> */}
             <Formik
                 initialValues={{
                     firstName: '',
@@ -121,7 +101,7 @@ export function ToyEdit() {
                         <label htmlFor="description"></label>
                         <textarea className="textarea" onChange={handleChange} name="description" id="description"
                             value={newToy.description}
-                        ></textarea>
+                        >Enter toy description</textarea>
                         <Select
                             value={labelValue}
                             onChange={temp}
@@ -131,7 +111,9 @@ export function ToyEdit() {
                             className="basic-multi-select"
                             classNamePrefix="select"
                         />
+
                         <button type="submit">Submit toy</button>
+
                     </Form>
                 )}
             </Formik>

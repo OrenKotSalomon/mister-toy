@@ -40,13 +40,14 @@ export function Toy() {
 
     return <section>
 
-        hello from Toy
+
         <main className="toy-index">
-            <div className="filter-container">
+            <div className="filter">
                 <ToyFilter onSetFilter={onSetFilter} filterBy={filterBy} labels={labels} />
             </div>
-
-            <Link to='/toy/edit'>Add toy</Link>
+            <div className="add">
+                <Link to='/toy/edit'>Add toy</Link>
+            </div>
             {/* {isLoading && <p>loading eztrobal</p>} */}
             <ToyList toys={toys} onDeleteToy={onDeleteToy} />
             {/* <TodoFilter onSetFilter={onSetFilter} /> */}

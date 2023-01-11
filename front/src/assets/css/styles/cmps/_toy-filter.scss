@@ -1,0 +1,58 @@
+.toy-filter {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .sort-container {
+        display: flex;
+        gap: 80px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filter-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
+
+        .text-filter {
+            margin-top: 5px;
+            border-radius: 10px;
+            padding-right: 20px;
+            margin-inline-end: 5px;
+        }
+    }
+
+    .basic-multi-select {
+        color: black;
+        flex-grow: 2;
+        margin-inline-start: 5px;
+    }
+
+
+    @include for-mobile-layout {
+        display: grid;
+
+        .sort-container {
+            display: flex;
+            gap: 80px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .filter-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+            align-items: center;
+            gap: 10px;
+
+            .text-label {
+                display: none;
+            }
+        }
+    }
+
+}

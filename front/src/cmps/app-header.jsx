@@ -7,7 +7,8 @@ import images from '../assets/img/images.png'
 export function AppHeader() {
 
 
-    return <header className="app-header">
+    return <header className="app-header full">
+
         <Link className="logo" to="/">
             <img src={images} alt="" />
         </Link>
